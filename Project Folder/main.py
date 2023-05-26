@@ -326,12 +326,15 @@ def finish_game(game_win):
         turtle.shape("gifs_musics/victory.gif")
         turtle.goto(0, 0)
         turtle.stamp()
+        turtle.color("pink")
+        turtle.goto(0, 17)
+        turtle.write(statistics['gold']*5000 + statistics['enemy']*10000, font=("Impact", 50, "normal"))
         turtle.goto(-300, -100)
         turtle.color("gold")
-        turtle.write(f"Total Gold Collected: {statistics['gold']}", font=("Br uno Ace SC", 25, "normal"))
+        turtle.write(f"Total Gold Collected: {statistics['gold']}", font=("Impact", 25, "normal"))
         turtle.goto(-300, -200)
         turtle.color("red")
-        turtle.write(f"Total Enemy Killed: {statistics['enemy']}", font=("Br uno Ace SC", 25, "normal"))
+        turtle.write(f"Total Enemy Killed: {statistics['enemy']}", font=("Impact", 25, "normal"))
     # game over screen
     elif not game_win:
         turtle.shape("gifs_musics/game_over.gif")
@@ -400,19 +403,23 @@ def next_maze(level_num):
     time.sleep(0.5)
     player.shape("gifs_musics/pr.gif")
 
+
 # writing player statistic on the screen
 def write_objects():
     turtle.speed(0)
     turtle.penup()
     turtle.goto(-445, 470)
     turtle.color("yellow")
-    turtle.write(f"Newt's Gold: {player.gold}", font=("Br uno Ace SC", 15, "normal"))
+    turtle.write(f"Newt's Gold= {player.gold}", font=("Impact", 15, "normal"))
     turtle.goto(-245, 470)
     turtle.color("white")
-    turtle.write(f"Keys: {player.key}", font=("Bruno Ace SC", 15, "normal"))
+    turtle.write(f"Keys= {player.key}", font=("Impact", 15, "normal"))
     turtle.goto(-145, 470)
     turtle.color("red")
-    turtle.write(f"Damage Count: {player.death}", font=("Bruno Ace SC", 15, "normal"))
+    turtle.write(f"Damage Count= {player.death}", font=("Impact", 15, "normal"))
+    turtle.goto(250, 470)
+    turtle.color("lightgreen")
+    turtle.write(f"HP=", font=("Impact", 15, "normal"))
     # player health point onjects
     turtle.shape("gifs_musics/hp.gif")
     for num in range(player.health):
