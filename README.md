@@ -1,4 +1,4 @@
-# Newt the Runer
+# Newt the Runner
 
 ## Description
 
